@@ -1,0 +1,149 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Admin Panel - MALIBA SECONDARY SCHOOL</title>
+    <link rel="stylesheet" href="styles.css">
+    <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/6.4.0/css/all.min.css">
+</head>
+<body>
+    <!-- Navigation -->
+    <nav class="navbar">
+        <div class="container">
+            <div class="nav-wrapper">
+                <div class="logo">
+                    <img src="BJ2.png" alt="">
+                    <span>MALIBA SECONDARY SCHOOL</span>
+                </div>
+                <button class="hamburger" id="hamburger">
+                    <span></span>
+                    <span></span>
+                    <span></span>
+                </button>
+                <ul class="nav-links" id="navLinks">
+                    <li><a href="index.html">Home</a></li>
+                    <li><a href="about.html">About</a></li>
+                    <li><a href="academics.html">Academics</a></li>
+                    <li><a href="events.html">Events</a></li>
+                    <li><a href="contact.html">Contact</a></li>
+                    <li><a href="admin.html" class="btn-admin active">Admin</a></li>
+                </ul>
+            </div>
+        </div>
+    </nav>
+
+    <!-- Admin Login/Panel -->
+    <section class="admin-section">
+        <div class="container">
+            <div class="admin-wrapper">
+                <!-- Login Form -->
+                <div class="login-form" id="loginForm">
+                    <h2>Admin Login</h2>
+                    <form onsubmit="handleAdminLogin(event)">
+                        <div class="form-group">
+                            <label for="adminUsername">Username:</label>
+                            <input type="text" id="adminUsername" required>
+                        </div>
+                        <div class="form-group">
+                            <label for="adminPassword">Password:</label>
+                            <input type="password" id="adminPassword" required>
+                        </div>
+                        <button type="submit" class="btn btn-primary">Login</button>
+                    </form>
+                    <!-- <p class="help-text">Demo: username: <strong>admin</strong> | password: <strong>admin123</strong></p> -->
+                </div>
+
+                <!-- Admin Panel -->
+                <div class="admin-panel" id="adminPanel" style="display: none;">
+                    <h2>Admin Dashboard</h2>
+                    <button class="btn btn-secondary" onclick="handleAdminLogout()">Logout</button>
+
+                    <!-- Add Event Form -->
+                    <div class="form-section">
+                        <h3>Add New Event</h3>
+                        <form onsubmit="handleAddEvent(event)">
+                            <div class="form-group">
+                                <label for="eventTitle">Event Title:</label>
+                                <input type="text" id="eventTitle" required>
+                            </div>
+                            <div class="form-group">
+                                <label for="eventDate">Event Date:</label>
+                                <input type="date" id="eventDate" required>
+                            </div>
+                            <div class="form-group">
+                                <label for="eventTime">Event Time:</label>
+                                <input type="time" id="eventTime" required>
+                            </div>
+                            <div class="form-group">
+                                <label for="eventLocation">Event Location:</label>
+                                <input type="text" id="eventLocation" required>
+                            </div>
+                            <div class="form-group">
+                                <label for="eventCategory">Category:</label>
+                                <select id="eventCategory" required>
+                                    <option value="">Select Category</option>
+                                    <option value="academic">Academic</option>
+                                    <option value="sports">Sports</option>
+                                    <option value="cultural">Cultural</option>
+                                    <option value="social">Social</option>
+                                </select>
+                            </div>
+                            <div class="form-group">
+                                <label for="eventDescription">Event Description:</label>
+                                <textarea id="eventDescription" rows="4" required></textarea>
+                            </div>
+                            <button type="submit" class="btn btn-primary">Add Event</button>
+                        </form>
+                    </div>
+
+                    <!-- Events Management -->
+                    <div class="events-management">
+                        <h3>Manage Events</h3>
+                        <div class="events-list" id="adminEventsList">
+                            <!-- Events will be populated here -->
+                        </div>
+                    </div>
+                </div>
+            </div>
+        </div>
+    </section>
+
+    <!-- Footer -->
+    <footer class="footer">
+        <div class="container">
+            <div class="footer-content">
+                <div class="footer-section">
+                    <h3>Contact Info</h3>
+                    <p>Email: info@malibaschool.edu</p>
+                    <p>Phone: +1 (555) 123-4567</p>
+                    <p>Address: 123 School Road, City, Country</p>
+                </div>
+                <div class="footer-section">
+                    <h3>Quick Links</h3>
+                    <ul>
+                        <li><a href="about.html">About</a></li>
+                        <li><a href="academics.html">Academics</a></li>
+                        <li><a href="events.html">Events</a></li>
+                        <li><a href="contact.html">Contact</a></li>
+                    </ul>
+                </div>
+                <div class="footer-section">
+                    <h3>Follow Us</h3>
+                    <div class="social-links">
+                        <a href="#" class="social-icon"><i class="fab fa-facebook"></i></a>
+                        <a href="#" class="social-icon"><i class="fab fa-twitter"></i></a>
+                        <a href="#" class="social-icon"><i class="fab fa-instagram"></i></a>
+                        <a href="#" class="social-icon"><i class="fab fa-linkedin"></i></a>
+                    </div>
+                </div>
+            </div>
+            <div class="footer-bottom">
+                <p>&copy; 2026 MALIBA SECONDARY SCHOOL. All rights reserved.</p>
+            </div>
+        </div>
+    </footer>
+
+    <script src="script.js"></script>
+</body>
+</html>
